@@ -19,28 +19,30 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void submit(View view) {
-        float i = 0;
-        CheckBox true1 = findViewById(R.id.true1_1);
-        CheckBox true2 = findViewById(R.id.true1_2);
-        CheckBox true3 = findViewById(R.id.true1_3);
+        float score = 0;
+        CheckBox checkBox1_1 = findViewById(R.id.true1_1);
+        CheckBox checkBox1_2 = findViewById(R.id.true1_2);
+        CheckBox checkBox1_3 = findViewById(R.id.true1_3);
         RadioButton falseRadio2_2 = findViewById(R.id.falseRadio2_2);
         EditText editText3_1 = findViewById(R.id.editText3_1);
-        RadioButton false4_2 = findViewById(R.id.false4_2);
-        if (true1.isChecked() && true2.isChecked() && true3.isChecked()) {
-            i += 1;
+        RadioButton falseRadio4_2 = findViewById(R.id.falseRadio4_2);
+        RadioButton trueRadio4_1 = findViewById(R.id.trueRadio4_1);
+        RadioButton trueRadio2_1 = findViewById(R.id.trueRadio2_1);
+        if (checkBox1_1.isChecked() && checkBox1_2.isChecked() && checkBox1_3.isChecked()) {
+            score += 1;
         }
-        if (falseRadio2_2.isChecked()) {
-            i += 1;
+        if (falseRadio2_2.isChecked() && !trueRadio2_1.isChecked()) {
+            score += 1;
         }
 
         if (editText3_1.getText().toString().equals("void") || editText3_1.getText().toString().equals("Void") || editText3_1.getText().toString().equals("VOID")) {
-            i += 1;
+            score += 1;
         }
-        if (false4_2.isChecked()) {
-            i += 1;
+        if (falseRadio4_2.isChecked() && !trueRadio4_1.isChecked()) {
+            score += 1;
         }
 
-        String toast = "You Scored " + (i / 4) * 100 + "% out and got " + i + " of the 4 Question's Correct";
+        String toast = "You Scored " + (score / 4) * 100 + "% out and got " + score + " of the 4 Question's Correct";
 
 
         Toast.makeText(QuizActivity.this, toast, Toast.LENGTH_SHORT).show();

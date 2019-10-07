@@ -337,6 +337,7 @@
                 android:orientation="vertical" />
 
             <RadioButton
+                android:id="@+id/trueRadio4_1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.2" />
@@ -355,7 +356,7 @@
                 android:orientation="vertical" />
 
             <RadioButton
-                android:id="@+id/false4_2"
+                android:id="@+id/falseRadio4_2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.2" />
